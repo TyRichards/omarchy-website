@@ -306,7 +306,7 @@
       margin: 0;
       color: currentColor;
       font-family: var(--font);
-      font-size: clamp(.425rem, 1.25vw, 1rem);
+      font-size: clamp(.255rem, .75vw, .6rem);
       font-weight: 400;
       letter-spacing: -.0425em;
       line-height: 1.09375;
@@ -325,7 +325,7 @@
       box-shadow: 0 0 16px 4px rgba(140, 191, 184, .5);
       opacity: 0;
     }
-    .pre.pre--live pre { animation: ascii-etch 1.7s steps(22) both; }
+    .pre.pre--live pre { animation: ascii-etch 1.7s steps(22) both, logo-pulse 6s ease-in-out 1.7s infinite alternate; }
     .pre.pre--live a::after { animation: ascii-laser 1.7s steps(22) both; }
     .hero-grid {
       display: grid;
@@ -347,8 +347,9 @@
     .kicker::before,
     .section-kicker::before { content: ""; width: 12px; height: 12px; border: 2px solid var(--stroke); background: var(--red); }
     .hero h1 {
-      max-width: 760px;
-      margin: 0 0 32px;
+      max-width: 1100px;
+      margin: 0 auto 72px;
+      text-align: center;
       font-size: clamp(38px, 3.68vw, 57.6px);
       font-weight: 400;
       line-height: .98;
@@ -639,6 +640,10 @@
       5%, 88% { opacity: 1; }
       100% { left: 100%; opacity: 0; }
     }
+    @keyframes logo-pulse {
+      from { color: var(--omarchy-green); }
+      to { color: var(--blue); }
+    }
 
     @media (max-width: 1100px) {
       :root { --page: min(100% - 64px, 900px); }
@@ -681,7 +686,7 @@
       .hero { padding: 20px 0 88px; }
       .hero::after { display: none; }
       .pre.hero-logo { margin-bottom: 36px; padding-block: 6px; overflow: hidden; }
-      .pre.hero-logo pre { font-size: clamp(.3rem, 1.25vw, .6rem); }
+      .pre.hero-logo pre { font-size: clamp(.18rem, .75vw, .36rem); }
       .hero h1 { font-size: clamp(35px, 10.5vw, 43px); }
       .actions { display: grid; grid-template-columns: 1fr; }
       .btn { width: 100%; }
@@ -793,10 +798,11 @@
           </a>
         </div>
 
+        <h1>There are many operating systems<br>but this one is <em>yours</em></h1>
+
         <div class="hero-grid">
           <div class="hero-copy-wrap">
             <p class="kicker">Beautiful, Fun &amp; Opinionated Linux by DHH</p>
-            <h1>There are many operating systems<br>but this one is <strong>yours</strong>.</h1>
             <div class="actions">
               <a class="btn btn--primary" href="https://iso.omarchy.org/omarchy-4.0.1.iso"><span>Install Omarchy</span><span class="btn__key">ISO ↓</span></a>
               <a class="btn" href="https://omarchy.org/manual/"><span>Read the manual</span><span aria-hidden="true">↗</span></a>
@@ -931,7 +937,7 @@
 
     <section class="final-cta" aria-label="Install Omarchy">
       <div class="final-cta__inner">
-        <div><h2>There are many operating systems<br>but this one is <strong>yours</strong>.</h2></div>
+        <div><h2>There are many operating systems<br>but this one is <em>yours</em></h2></div>
         <a class="btn" href="https://iso.omarchy.org/omarchy-4.0.1.iso">Download ISO ↓</a>
       </div>
     </section>
