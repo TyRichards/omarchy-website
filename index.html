@@ -276,17 +276,6 @@
       padding: 70px 0 0;
       border-bottom: var(--line);
     }
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: -48px;
-      bottom: -48px;
-      width: 132px;
-      height: 132px;
-      border: 2px solid var(--stroke);
-      background: var(--purple);
-      transform: rotate(45deg);
-    }
     .hero__inner { width: var(--page); margin: auto; }
     .pre.hero-logo {
       display: grid;
@@ -587,16 +576,6 @@
     .community-card:hover .community-card__arrow { transform: rotate(45deg); }
     .community-card h3 { margin: 60px 0 16px; font-size: clamp(28px, 3vw, 46px); font-weight: 400; line-height: 1; letter-spacing: -.05em; }
     .community-card p { max-width: 340px; margin: 0; font-size: 12px; }
-    .community-card__glyph {
-      position: absolute;
-      right: -14px;
-      bottom: -34px;
-      font-size: 116px;
-      line-height: 1;
-      opacity: .12;
-      transform: rotate(-8deg);
-    }
-
     .final-cta {
       padding: 112px 0;
       border-top: var(--line);
@@ -684,7 +663,6 @@
       .nav-link--install { grid-column: auto; }
       .hero { padding: 20px 0 0; }
       .hero-grid { margin-bottom: 0; }
-      .hero::after { display: none; }
       .pre.hero-logo { margin-bottom: 18px; padding-block: 3px; overflow: hidden; }
       .pre.hero-logo pre { font-size: clamp(.18rem, .75vw, .36rem); }
       .hero h1 { font-size: clamp(28px, 8.4vw, 34.4px); }
@@ -898,37 +876,31 @@
           <a class="community-card" href="https://omarchyplugins.com/">
             <div class="community-card__top"><span class="community-card__number">01 / EXTEND</span><span class="community-card__arrow">↗</span></div>
             <div><h3>Plugins</h3><p>Give your system new powers. Browse community-built commands, panels and tiny miracles.</p></div>
-            <span class="community-card__glyph" aria-hidden="true">+</span>
           </a>
 
           <a class="community-card" href="https://omarchy.org/themes/">
             <div class="community-card__top"><span class="community-card__number">02 / RESTYLE</span><span class="community-card__arrow">↗</span></div>
             <div><h3>Themes</h3><p>One command changes the whole machine. Color, type, wallpaper, terminal — all of it.</p></div>
-            <span class="community-card__glyph" aria-hidden="true">◩</span>
           </a>
 
           <a class="community-card" href="https://omarchy.org/meetups/">
             <div class="community-card__top"><span class="community-card__number">03 / IRL</span><span class="community-card__arrow">↗</span></div>
             <div><h3>Meetups</h3><p>Step away from the terminal. Find Omarchs in your city or start a gathering yourself.</p></div>
-            <span class="community-card__glyph" aria-hidden="true">⌖</span>
           </a>
 
           <a class="community-card" href="https://discord.gg/tXFUdasqhY">
             <div class="community-card__top"><span class="community-card__number">04 / ONLINE</span><span class="community-card__arrow">↗</span></div>
             <div><h3>Discord</h3><p>Get unstuck, show off, compare configs, and join the conversation in real time.</p></div>
-            <span class="community-card__glyph" aria-hidden="true">#</span>
           </a>
 
           <a class="community-card" href="https://omarchy.org/workstations/">
             <div class="community-card__top"><span class="community-card__number">05 / SHOWCASE</span><span class="community-card__arrow">↗</span></div>
             <div><h3>Workstations</h3><p>See the keyboards, screens and beautifully obsessive setups where Omarchy lives.</p></div>
-            <span class="community-card__glyph" aria-hidden="true">▣</span>
           </a>
 
           <a class="community-card" href="https://supply.37signals.com/collections/omarchy">
             <div class="community-card__top"><span class="community-card__number">06 / WEAR</span><span class="community-card__arrow">↗</span></div>
             <div><h3>Merch</h3><p>Signal your allegiance with field-tested Omarchy gear from 37signals Supply.</p></div>
-            <span class="community-card__glyph" aria-hidden="true">✦</span>
           </a>
         </div>
       </div>
