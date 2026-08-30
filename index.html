@@ -29,6 +29,7 @@
       --purple: #2a6b78;
       --pink: #743d1e;
       --muted: #a7c9c6;
+      --omarchy-green: #9ece6a;
       --stroke: #595959aa;
       --line: 2px solid var(--stroke);
       --shadow: 8px 8px 0 var(--deep);
@@ -71,12 +72,13 @@
     .flash {
       position: relative;
       z-index: 60;
-      min-height: 34px;
+      height: 43px;
+      min-height: 43px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 14px;
-      padding: 9px 52px 9px 20px;
+      padding: 0 52px 0 20px;
       border-bottom: var(--line);
       background: var(--deep);
       color: var(--ink);
@@ -97,7 +99,7 @@
     .flash__close {
       position: absolute;
       inset: 0 0 0 auto;
-      width: 36px;
+      width: 43px;
       border: 0;
       border-left: var(--line);
       background: transparent;
@@ -147,7 +149,7 @@
     .brand__o {
       width: 27px;
       height: 27px;
-      color: var(--yellow);
+      color: var(--omarchy-green);
       -webkit-mask-image: url("https://omarchy.org/brand/omarchy-logo.svg");
       mask-image: url("https://omarchy.org/brand/omarchy-logo.svg");
     }
@@ -409,40 +411,6 @@
     }
     .screen__bar span:first-child { width: 10px; height: 10px; border: 2px solid var(--stroke); background: var(--red); }
     .screen__bar strong { margin-left: auto; font-weight: 400; color: var(--muted); }
-    .video-facade {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      display: block;
-      padding: 0;
-      overflow: hidden;
-      border: 0;
-      background: #000;
-      cursor: pointer;
-    }
-    .video-facade img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.45) sepia(.18) contrast(.92); transition: transform .3s ease, opacity .3s ease; }
-    .video-facade:hover img { transform: scale(1.025); opacity: .8; }
-    .play {
-      position: absolute;
-      inset: 50% auto auto 50%;
-      width: 76px;
-      height: 56px;
-      display: grid;
-      place-items: center;
-      border: var(--line);
-      background: var(--red);
-      box-shadow: 5px 5px 0 var(--deep);
-      transform: translate(-50%, -50%);
-    }
-    .play::before {
-      content: "";
-      border-top: 11px solid transparent;
-      border-bottom: 11px solid transparent;
-      border-left: 18px solid var(--deep);
-      transform: translateX(2px);
-    }
-    .video-facade:hover .play { background: var(--lime); }
-    .video-facade:hover .play::before { border-left-color: var(--deep); }
     .video-frame { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; border: 0; }
     .video-card > .video-frame { border-bottom: var(--line); }
 
@@ -536,10 +504,6 @@
       transition: transform .18s ease, box-shadow .18s ease;
     }
     .video-card:hover { z-index: 2; transform: translate(-5px, -5px); box-shadow: 9px 9px 0 var(--lime); }
-    .video-card__image { position: relative; width: 100%; aspect-ratio: 16 / 9; padding: 0; overflow: hidden; border: 0; border-bottom: var(--line); background: var(--deep); cursor: pointer; }
-    .video-card__image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.72) contrast(.94); transition: transform .3s ease; }
-    .video-card:hover .video-card__image img { transform: scale(1.035); }
-    .review-facade:hover .play { background: var(--red); }
     .video-card__body { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; padding: 28px; }
     .video-card h3 { margin: 0; font-size: clamp(17px, 2vw, 27px); font-weight: 400; line-height: 1.15; letter-spacing: -.035em; }
     .video-card p { margin: 0; font-size: 10px; text-align: right; text-transform: uppercase; }
@@ -806,10 +770,7 @@
 
           <div class="screen">
             <div class="screen__bar"><span aria-hidden="true"></span><span>Now playing / Omarchy Quattro</span><strong>01:21:28</strong></div>
-            <button class="video-facade" type="button" data-video="F7fe9pa8OeE" aria-label="Play Omarchy Quattro by David Heinemeier Hansson">
-              <img src="https://omarchy.org/assets/images/video/omarchy-quattro.webp" alt="Omarchy Quattro desktop video by David Heinemeier Hansson" width="1280" height="720">
-              <span class="play" aria-hidden="true"></span>
-            </button>
+            <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/F7fe9pa8OeE?controls=0&amp;rel=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;fs=0&amp;disablekb=1&amp;playsinline=1" title="Omarchy Quattro by David Heinemeier Hansson" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
           </div>
         </div>
       </div>
@@ -853,34 +814,22 @@
 
         <div class="video-grid">
           <article class="video-card">
-            <button class="video-card__image review-facade" type="button" data-video="9SDkU5VDQEQ" aria-label="Play You need to switch to Linux RIGHT NOW by NetworkChuck">
-              <img src="https://i.ytimg.com/vi/9SDkU5VDQEQ/maxresdefault.jpg" alt="NetworkChuck's Omarchy video thumbnail" width="1280" height="720" loading="lazy">
-              <span class="play" aria-hidden="true"></span>
-            </button>
+            <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/9SDkU5VDQEQ?controls=0&amp;rel=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;fs=0&amp;disablekb=1&amp;playsinline=1" title="You need to switch to Linux RIGHT NOW by NetworkChuck" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
             <div class="video-card__body"><h3>You need to switch to Linux RIGHT NOW!!</h3><p>NetworkChuck<br>33:36</p></div>
           </article>
 
           <article class="video-card">
-            <button class="video-card__image review-facade" type="button" data-video="5JPYJfN7HY0" aria-label="Play They finally fixed Linux by typecraft">
-              <img src="https://i.ytimg.com/vi/5JPYJfN7HY0/maxresdefault.jpg" alt="Typecraft's Omarchy video thumbnail" width="1280" height="720" loading="lazy">
-              <span class="play" aria-hidden="true"></span>
-            </button>
+            <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/5JPYJfN7HY0?controls=0&amp;rel=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;fs=0&amp;disablekb=1&amp;playsinline=1" title="They finally fixed Linux by typecraft" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
             <div class="video-card__body"><h3>They finally fixed Linux</h3><p>typecraft<br>14:44</p></div>
           </article>
 
           <article class="video-card">
-            <button class="video-card__image review-facade" type="button" data-video="qBKMe8AatY0" aria-label="Play I Didn't Expect Omarchy 4 to Be This Good by LinuxBTW">
-              <img src="https://i.ytimg.com/vi/qBKMe8AatY0/maxresdefault.jpg" alt="LinuxBTW's Omarchy 4 video thumbnail" width="1280" height="720" loading="lazy">
-              <span class="play" aria-hidden="true"></span>
-            </button>
+            <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/qBKMe8AatY0?controls=0&amp;rel=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;fs=0&amp;disablekb=1&amp;playsinline=1" title="I Didn't Expect Omarchy 4 to Be This Good by LinuxBTW" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
             <div class="video-card__body"><h3>I Didn't Expect Omarchy 4 to Be This Good</h3><p>LinuxBTW<br>26:25</p></div>
           </article>
 
           <article class="video-card">
-            <button class="video-card__image review-facade" type="button" data-video="KO2T0oET9go" aria-label="Play If you use AI, switch to Omarchy immediately by Alex Finn">
-              <img src="https://i.ytimg.com/vi/KO2T0oET9go/maxresdefault.jpg" alt="Alex Finn's Omarchy video thumbnail" width="1280" height="720" loading="lazy">
-              <span class="play" aria-hidden="true"></span>
-            </button>
+            <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/KO2T0oET9go?controls=0&amp;rel=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;fs=0&amp;disablekb=1&amp;playsinline=1" title="If you use AI, switch to Omarchy immediately by Alex Finn" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
             <div class="video-card__body"><h3>If you use AI, switch to Omarchy immediately</h3><p>Alex Finn<br>21:46</p></div>
           </article>
         </div>
@@ -991,18 +940,6 @@
 
     document.querySelector('.flash__close').addEventListener('click', (event) => {
       event.currentTarget.closest('.flash').remove();
-    });
-
-    document.querySelectorAll('[data-video]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const iframe = document.createElement('iframe');
-        iframe.className = 'video-frame';
-        iframe.src = `https://www.youtube-nocookie.com/embed/${button.dataset.video}?autoplay=1&rel=0`;
-        iframe.title = button.getAttribute('aria-label');
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.allowFullscreen = true;
-        button.replaceWith(iframe);
-      }, { once: true });
     });
 
     document.querySelectorAll('[data-copy]').forEach((button) => {
