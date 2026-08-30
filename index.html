@@ -273,7 +273,7 @@
     main { overflow: hidden; }
     .hero {
       position: relative;
-      padding: 70px 0 140px;
+      padding: 70px 0 0;
       border-bottom: var(--line);
     }
     .hero::after {
@@ -335,6 +335,7 @@
       grid-template-columns: minmax(0, .92fr) minmax(480px, 1.08fr);
       gap: clamp(56px, 7vw, 104px);
       align-items: center;
+      margin-bottom: 140px;
     }
     .hero-copy-wrap { min-width: 0; }
     .kicker,
@@ -447,7 +448,7 @@
     .video-card > .video-frame { border-bottom: var(--line); }
 
     .credibility {
-      border-bottom: var(--line);
+      border-top: var(--line);
       background: var(--panel);
     }
     .credibility__inner { width: var(--page); margin: auto; padding: 62px 0 58px; }
@@ -728,7 +729,8 @@
       .brand__wordmark { width: 92px; height: 22px; }
       .nav-links[data-open="true"] { grid-template-columns: 1fr; max-height: calc(100vh - 92px); overflow-y: auto; }
       .nav-link--install { grid-column: auto; }
-      .hero { padding: 20px 0 88px; }
+      .hero { padding: 20px 0 0; }
+      .hero-grid { margin-bottom: 88px; }
       .hero::after { display: none; }
       .pre.hero-logo { margin-bottom: 18px; padding-block: 3px; overflow: hidden; }
       .pre.hero-logo pre { font-size: clamp(.18rem, .75vw, .36rem); }
@@ -868,9 +870,8 @@
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="credibility" aria-labelledby="credibility-title">
+      <section class="credibility" aria-labelledby="credibility-title">
       <div class="credibility__inner">
         <h2 class="credibility__title" id="credibility-title">Proudly brought to you by:</h2>
         <div class="logo-row" role="list" aria-label="Supporting companies">
@@ -894,6 +895,7 @@
           </div>
         </div>
       </div>
+      </section>
     </section>
 
     <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
