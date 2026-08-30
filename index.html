@@ -471,17 +471,29 @@
       place-items: center;
       padding: 18px 12px;
       border-right: 2px solid var(--stroke);
-      font-family: var(--font);
-      font-size: clamp(12px, 1.2vw, 17px);
-      font-weight: 800;
-      letter-spacing: -.04em;
-      text-align: center;
+      color: var(--ink);
     }
     .logo-chip:last-child { border-right: 0; }
     .logo-chip:nth-child(3n+1) { background: #071e37; }
     .logo-chip:nth-child(3n+2) { background: #0a2b3d; }
     .logo-chip:nth-child(3n) { background: #103044; }
-    .logo-chip--mono { font-family: var(--font); font-weight: 400; letter-spacing: -.06em; }
+    .logo-mark {
+      display: block;
+      width: min(100%, 108px);
+      height: 34px;
+      background: var(--ink);
+      -webkit-mask-image: var(--logo);
+      -webkit-mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-image: var(--logo);
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+    }
+    .logo-mark--icon { width: 42px; height: 42px; }
+    .logo-svg { width: 42px; height: 42px; display: block; color: var(--ink); fill: currentColor; }
+    .logo-svg--wordmark { width: min(100%, 108px); height: 34px; }
 
     .section { padding: 148px 0; }
     .section__inner { width: var(--page); margin: auto; }
@@ -818,15 +830,21 @@
       <div class="credibility__inner">
         <h2 class="credibility__title" id="credibility-title">Proudly brought to you by:</h2>
         <div class="logo-row" role="list" aria-label="Supporting companies">
-          <div class="logo-chip">Dropbox</div>
-          <div class="logo-chip">shopify</div>
-          <div class="logo-chip">stripe</div>
-          <div class="logo-chip">DELL</div>
-          <div class="logo-chip">Block</div>
-          <div class="logo-chip">CLOUDFLARE</div>
-          <div class="logo-chip logo-chip--mono">OpenClaw</div>
-          <div class="logo-chip">sesame</div>
-          <div class="logo-chip">37signals</div>
+          <div class="logo-chip" role="listitem"><span class="logo-mark" role="img" aria-label="Dropbox" style="--logo:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/dropbox.svg')"></span></div>
+          <div class="logo-chip" role="listitem"><span class="logo-mark" role="img" aria-label="Shopify" style="--logo:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/shopify.svg')"></span></div>
+          <div class="logo-chip" role="listitem"><span class="logo-mark" role="img" aria-label="Stripe" style="--logo:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/stripe.svg')"></span></div>
+          <div class="logo-chip" role="listitem"><span class="logo-mark" role="img" aria-label="Dell" style="--logo:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/dell.svg')"></span></div>
+          <div class="logo-chip" role="listitem">
+            <svg class="logo-svg" viewBox="0 0 22 22" role="img" aria-label="Block"><rect x="0" y="0" width="6" height="6" rx="1"/><rect x="8" y="0" width="6" height="6" rx="1"/><rect x="16" y="0" width="6" height="6" rx="1"/><rect x="0" y="8" width="6" height="6" rx="1"/><rect x="8" y="8" width="6" height="6" rx="1"/><rect x="16" y="8" width="6" height="6" rx="1"/><rect x="0" y="16" width="6" height="6" rx="1"/><rect x="8" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/></svg>
+          </div>
+          <div class="logo-chip" role="listitem"><span class="logo-mark" role="img" aria-label="Cloudflare" style="--logo:url('https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/cloudflare.svg')"></span></div>
+          <div class="logo-chip" role="listitem"><span class="logo-mark logo-mark--icon" role="img" aria-label="OpenClaw" style="--logo:url('https://openclaw.ai/favicon.svg')"></span></div>
+          <div class="logo-chip" role="listitem">
+            <svg class="logo-svg logo-svg--wordmark" viewBox="0 0 229.4 41.46" role="img" aria-label="Sesame"><path d="M210.95 22.47h14.98V19.4h-14.98V4.62h11.16c2.66 0 4.32.6 7.04 3.07l.25-.25-3.62-6.53H201.5v.3c2.11 1.86 1.96 4.52 1.96 10.3v18.8c0 5.78.15 8.44-1.96 10.35v.25h24.28l3.62-6.58-.25-.15c-2.71 2.36-4.37 3.02-7.04 3.02h-11.16zm-40.27-.71L161.33.9h-12.01v.3c1.51 1.41 1.91 3.17 1.91 6.89v25.68c0 3.72-.45 5.43-1.96 6.89v.25h7.59v-.25c-1.51-1.46-1.91-3.17-1.91-6.89V7.09h.9l11.46 25.28h2.46l11.11-25.28h.75v26.69c0 3.72-.45 5.43-2.01 6.89v.25h11.46v-.25c-1.56-1.46-1.91-3.17-1.91-6.89V8.09c0-3.72.45-5.48 1.96-6.89V.9h-11.31l-9.15 20.86ZM127.46 28h-13.87l6.99-22.72L127.47 28Zm-16.14 7.39 1.31-4.27h15.78l1.36 4.27c.8 2.71.9 3.97-.35 5.28v.25h11.76v-.25c-1.51-1.41-2.81-2.86-3.62-5.53L126.8 0h-.3l-9.25 4.73-9.2 29.3c-1 3.22-2.36 5.08-4.37 6.64v.25h7.99v-.25c-1.26-1.31-1.16-2.66-.35-5.28M43.87 22.47h14.98V19.4H43.87V4.62h11.16c2.61 0 4.32.6 7.04 3.07l.25-.25L58.7.91H34.37v.3c2.11 1.86 1.96 4.52 1.96 10.3v18.8c0 5.78.15 8.44-1.96 10.35v.25H58.7l3.62-6.58-.25-.15c-2.71 2.36-4.42 3.02-7.04 3.02H43.87zM10.39 4.02c3.32 0 5.73 1.66 13.27 5.98l-.1-8.19h-.3C19.64 3.32 17.13.35 11.45.35 4.92.35.29 3.92.29 10.25c0 5.58 3.87 7.94 7.74 11.16l5.08 4.22c3.62 3.02 5.23 4.83 5.23 7.79s-2.31 4.42-4.62 4.42c-2.92 0-5.38-1.46-13.72-7.24l.05 9.45h.3c3.97-2.06 8.54 1.41 13.67 1.41 6.28 0 10.1-4.73 10.1-10.25 0-5.23-2.21-8.19-8.04-13.02l-3.17-2.61c-4.77-3.92-6.48-5.63-6.48-8.14 0-2.31 1.96-3.42 3.97-3.42m72.67 0c3.32 0 5.73 1.66 13.27 5.98l-.1-8.19h-.3C92.32 3.32 89.81.35 84.13.35c-6.54 0-11.16 3.57-11.16 9.9 0 5.58 3.87 7.94 7.74 11.16l5.08 4.22c3.62 3.02 5.23 4.83 5.23 7.79s-2.31 4.42-4.62 4.42c-2.91 0-5.38-1.46-13.72-7.24l.05 9.45h.3c3.97-2.06 8.55 1.41 13.67 1.41 6.28 0 10.1-4.73 10.1-10.25 0-5.23-2.21-8.19-8.04-13.02l-3.17-2.61c-4.77-3.92-6.48-5.63-6.48-8.14 0-2.31 1.96-3.42 3.97-3.42"/></svg>
+          </div>
+          <div class="logo-chip" role="listitem">
+            <svg class="logo-svg" viewBox="0 0 37 37" role="img" aria-label="37signals"><path d="m35.4812 22.164c2.0248-2.0239 2.0248-5.3007-.0003-7.3248-2.0198-2.0258-5.301-2.0258-7.319.0007-2.0281 2.0232-2.0292 5.3012 0 7.3241 2.017 2.0215 5.2989 2.0221 7.3193 0z"/><path d="m22.1611 8.84334c2.0249-2.02387 2.0249-5.30008-.0002-7.32415-2.0198-2.02571-5.301-2.025711-7.319.00075-2.0281 2.02309-2.0292 5.30112 0 7.32404 2.017 2.02152 5.2989 2.02152 7.3192-.00064z"/><path d="m14.8417 35.4878c-2.0004-1.9957-1.9608-5.2847 0-7.3054 1.6632-1.6643 1.6633-4.3568 0-6.0182-1.6514-1.6494-4.3462-1.6166-6.01902 0-2.01326 2.0137-5.29117 2.0138-7.30726 0-2.000628-1.9982-1.960613-5.3031.00011-7.3247 1.64664-1.6469 1.614-4.3531 0-6.02035-2.020627-2.01857-2.020787-5.2857 0-7.30443 2.01572-2.019741 5.29428-2.019741 7.30798.00069 2.00119 1.99779 1.96109 5.28187-.0009 7.30374-1.6608 1.66305-1.6608 4.35645.00061 6.02035 1.65198 1.6478 4.34698 1.6154 6.01848 0 2.0158-2.0162 5.3064-2.0167 7.3201 0 2.004 1.9963 1.9646 5.3019 0 7.3247-1.6606 1.661-1.6615 4.354 0 6.0188 2.0241 2.0154 2.0252 5.2892 0 7.3055-2.0128 2.0155-5.3039 2.0155-7.3201-.0007z"/></svg>
+          </div>
         </div>
       </div>
     </section>
