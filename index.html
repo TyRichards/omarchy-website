@@ -123,7 +123,8 @@
       height: 43px;
       min-height: 43px;
       margin: 0;
-      padding-inline: 15px;
+      padding-left: 15px;
+      padding-right: 0;
       display: flex;
       align-items: center;
       gap: 32px;
@@ -261,7 +262,7 @@
     main { overflow: hidden; }
     .hero {
       position: relative;
-      padding: 80px 0 140px;
+      padding: 40px 0 140px;
       border-bottom: var(--line);
     }
     .hero::after {
@@ -278,8 +279,8 @@
     .hero__inner { width: var(--page); margin: auto; }
     .pre.hero-logo {
       display: grid;
-      margin: 0 auto 112px;
-      padding-block: 24px;
+      margin: 0 auto 56px;
+      padding-block: 12px;
     }
     .pre.hero-logo a {
       position: relative;
@@ -677,9 +678,9 @@
       .brand__wordmark { width: 92px; height: 22px; }
       .nav-links[data-open="true"] { grid-template-columns: 1fr; max-height: calc(100vh - 92px); overflow-y: auto; }
       .nav-link--install { grid-column: auto; }
-      .hero { padding: 40px 0 88px; }
+      .hero { padding: 20px 0 88px; }
       .hero::after { display: none; }
-      .pre.hero-logo { margin-bottom: 72px; padding-block: 12px; overflow: hidden; }
+      .pre.hero-logo { margin-bottom: 36px; padding-block: 6px; overflow: hidden; }
       .pre.hero-logo pre { font-size: clamp(.3rem, 1.25vw, .6rem); }
       .hero h1 { font-size: clamp(35px, 10.5vw, 43px); }
       .actions { display: grid; grid-template-columns: 1fr; }
