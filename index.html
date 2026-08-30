@@ -7,13 +7,10 @@
   <meta name="theme-color" content="#05182e">
   <title>Omarchy — Beautiful, Fun &amp; Opinionated Linux</title>
   <link rel="icon" href="https://omarchy.org/assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
   <style>
-    @font-face {
-      font-family: "JetBrains Mono";
-      src: url("https://omarchy.org/assets/fonts/JetBrainsMono-Regular.woff2") format("woff2");
-      font-display: swap;
-      font-weight: 400;
-    }
 
     :root {
       /* Omarchy Retro 82 */
@@ -34,7 +31,7 @@
       --line: 2px solid var(--stroke);
       --shadow: 8px 8px 0 var(--deep);
       --page: min(1280px, calc(100% - 128px));
-      --font: "JetBrains Mono", monospace;
+      --font: "Geist Mono", monospace;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -292,7 +289,7 @@
     .pre.hero-logo pre {
       margin: 0;
       color: currentColor;
-      font-family: "JetBrains Mono", monospace;
+      font-family: var(--font);
       font-size: clamp(8px, .8vw, 11.2px);
       font-weight: 400;
       letter-spacing: -.0425em;
@@ -336,7 +333,7 @@
     .hero h1 {
       max-width: 760px;
       margin: 0 0 32px;
-      font-size: clamp(38px, 4.6vw, 72px);
+      font-size: clamp(38px, 3.68vw, 57.6px);
       font-weight: 400;
       line-height: .98;
       letter-spacing: -.055em;
@@ -783,7 +780,7 @@
               </a>
             </div>
             <p class="kicker">Beautiful, Fun &amp; Opinionated Linux by DHH</p>
-            <h1>There Are Many Operating Systems. This One Is <em>yours</em></h1>
+            <h1>There are many operating systems. This one is <strong>yours</strong>.</h1>
             <div class="actions">
               <a class="btn btn--primary" href="https://iso.omarchy.org/omarchy-4.0.1.iso"><span>Install Omarchy</span><span class="btn__key">ISO ↓</span></a>
               <a class="btn" href="https://omarchy.org/manual/"><span>Read the manual</span><span aria-hidden="true">↗</span></a>
