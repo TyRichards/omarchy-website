@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05182e">
+  <meta name="description" content="Complete Omarchy Retro 82 color palette with copy-ready hex codes.">
+  <title>Retro 82 — Color Reference</title>
+  <style>
+    @font-face {
+      font-family: "JetBrains Mono";
+      src: url("https://omarchy.org/assets/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+      font-display: swap;
+    }
+
+    :root {
+      --accent: #faa968;
+      --selection: #134e5a;
+      --muted: #2a6b78;
+      --background: #05182e;
+      --dark-background: #031222;
+      --darker-background: #020c17;
+      --lighter-background: #0a2540;
+      --foreground: #f6dcac;
+      --dark-foreground: #3f8f8a;
+      --light-foreground: #a7c9c6;
+      --red: #f85525;
+      --yellow: #e97b3c;
+      --orange: #faa968;
+      --green: #028391;
+      --cyan: #8cbfb8;
+      --blue: #3f8f8a;
+      --magenta: #3f8f8a;
+      --brown: #743d1e;
+      --inactive-border: #595959aa;
+    }
+
+    * { box-sizing: border-box; }
+    html { color-scheme: dark; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: "JetBrains Mono", monospace;
+      line-height: 1.5;
+    }
+    button, textarea { font: inherit; }
+    button { color: inherit; }
+    ::selection { color: var(--foreground); background: var(--selection); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    .topbar {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 8px 20px;
+      border-bottom: 2px solid var(--inactive-border);
+      background: var(--darker-background);
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    .topbar a { color: var(--accent); text-underline-offset: 3px; }
+    .status { color: var(--cyan); }
+
+    main { width: min(1240px, calc(100% - 48px)); margin: auto; padding: 88px 0 120px; }
+    header { max-width: 900px; margin-bottom: 72px; }
+    .eyebrow { margin: 0 0 18px; color: var(--cyan); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 0 0 24px; color: var(--accent); font-size: clamp(46px, 8vw, 108px); font-weight: 400; line-height: .9; letter-spacing: -.08em; }
+    header p { max-width: 720px; margin: 0; color: var(--light-foreground); font-size: 15px; }
+
+    section + section { margin-top: 96px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+    h2 { margin: 0; font-size: clamp(26px, 4vw, 48px); font-weight: 400; letter-spacing: -.05em; }
+    .section-head p { max-width: 460px; margin: 0; color: var(--light-foreground); font-size: 11px; text-align: right; text-transform: uppercase; }
+
+    .palette { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 2px solid var(--inactive-border); }
+    .swatch {
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      border: 0;
+      border-right: 2px solid var(--inactive-border);
+      border-bottom: 2px solid var(--inactive-border);
+      background: var(--color);
+      color: var(--label);
+      text-align: left;
+      cursor: pointer;
+    }
+    .swatch:nth-child(4n) { border-right: 0; }
+    .swatch:nth-last-child(-n+4) { border-bottom: 0; }
+    .swatch:hover { box-shadow: inset 0 0 0 5px var(--label); }
+    .swatch__top { display: flex; justify-content: space-between; gap: 16px; font-size: 10px; text-transform: uppercase; }
+    .swatch__copy { opacity: .7; }
+    .swatch strong { display: block; margin-bottom: 4px; font-size: 13px; font-weight: 400; text-transform: uppercase; }
+    .swatch code { font-size: 22px; }
+
+    .code-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .code-card { border: 2px solid var(--inactive-border); background: var(--darker-background); }
+    .code-card__bar { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 2px solid var(--inactive-border); background: var(--lighter-background); font-size: 11px; text-transform: uppercase; }
+    .code-card__bar h3 { margin: 0; font: inherit; }
+    .copy-all { padding: 7px 10px; border: 2px solid var(--inactive-border); background: var(--muted); cursor: pointer; text-transform: uppercase; }
+    .copy-all:hover { background: var(--accent); color: var(--darker-background); }
+    pre { max-height: 560px; margin: 0; padding: 20px; overflow: auto; color: var(--light-foreground); font: 12px/1.7 "JetBrains Mono", monospace; white-space: pre; }
+    pre strong { color: var(--accent); font-weight: 400; }
+
+    .note { margin-top: 96px; padding: 24px; border: 2px solid var(--inactive-border); background: var(--lighter-background); color: var(--light-foreground); font-size: 12px; }
+    .note strong { color: var(--accent); font-weight: 400; }
+    .toast { position: fixed; right: 20px; bottom: 20px; z-index: 10; padding: 12px 16px; border: 2px solid var(--inactive-border); background: var(--accent); color: var(--darker-background); font-size: 11px; text-transform: uppercase; transform: translateY(100px); transition: transform .15s ease; }
+    .toast[data-show="true"] { transform: none; }
+
+    @media (max-width: 900px) {
+      .palette { grid-template-columns: repeat(2, 1fr); }
+      .swatch:nth-child(4n) { border-right: 2px solid var(--inactive-border); }
+      .swatch:nth-child(2n) { border-right: 0; }
+      .swatch:nth-last-child(-n+4) { border-bottom: 2px solid var(--inactive-border); }
+      .swatch:nth-last-child(-n+2) { border-bottom: 0; }
+      .code-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 540px) {
+      main { width: calc(100% - 32px); padding-top: 60px; }
+      .topbar { align-items: flex-start; flex-direction: column; gap: 4px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 12px; text-align: left; }
+      .palette { grid-template-columns: 1fr; }
+      .swatch { min-height: 170px; border-right: 0 !important; border-bottom: 2px solid var(--inactive-border) !important; }
+      .swatch:last-child { border-bottom: 0 !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span>Omarchy / Retro 82 / Color Reference</span>
+    <span class="status">Click any swatch to copy</span>
+    <a href="index.html">Back to site ↗</a>
+  </div>
+
+  <main>
+    <header>
+      <p class="eyebrow">Complete source palette</p>
+      <h1>Retro 82</h1>
+      <p>Every color from Omarchy's stock Retro 82 <code>colors.toml</code>, organized for fast visual reference and one-click copying.</p>
+    </header>
+
+    <section aria-labelledby="core-title">
+      <div class="section-head">
+        <h2 id="core-title">Core interface</h2>
+        <p>Backgrounds, text, selection, accent, and muted UI colors.</p>
+      </div>
+      <div class="palette">
+        <button class="swatch" style="--color:#faa968;--label:#020c17" data-copy="#faa968"><span class="swatch__top">Accent <span class="swatch__copy">Copy</span></span><span><strong>accent</strong><code>#faa968</code></span></button>
+        <button class="swatch" style="--color:#134e5a;--label:#f6dcac" data-copy="#134e5a"><span class="swatch__top">Selection <span class="swatch__copy">Copy</span></span><span><strong>selection</strong><code>#134e5a</code></span></button>
+        <button class="swatch" style="--color:#2a6b78;--label:#f6dcac" data-copy="#2a6b78"><span class="swatch__top">Muted <span class="swatch__copy">Copy</span></span><span><strong>muted</strong><code>#2a6b78</code></span></button>
+        <button class="swatch" style="--color:#05182e;--label:#f6dcac" data-copy="#05182e"><span class="swatch__top">Background <span class="swatch__copy">Copy</span></span><span><strong>background</strong><code>#05182e</code></span></button>
+        <button class="swatch" style="--color:#031222;--label:#f6dcac" data-copy="#031222"><span class="swatch__top">Background −1 <span class="swatch__copy">Copy</span></span><span><strong>dark_background</strong><code>#031222</code></span></button>
+        <button class="swatch" style="--color:#020c17;--label:#f6dcac" data-copy="#020c17"><span class="swatch__top">Background −2 <span class="swatch__copy">Copy</span></span><span><strong>darker_background</strong><code>#020c17</code></span></button>
+        <button class="swatch" style="--color:#0a2540;--label:#f6dcac" data-copy="#0a2540"><span class="swatch__top">Background +1 <span class="swatch__copy">Copy</span></span><span><strong>lighter_background</strong><code>#0a2540</code></span></button>
+        <button class="swatch" style="--color:#f6dcac;--label:#020c17" data-copy="#f6dcac"><span class="swatch__top">Foreground <span class="swatch__copy">Copy</span></span><span><strong>foreground / bright</strong><code>#f6dcac</code></span></button>
+        <button class="swatch" style="--color:#3f8f8a;--label:#020c17" data-copy="#3f8f8a"><span class="swatch__top">Foreground −1 <span class="swatch__copy">Copy</span></span><span><strong>dark_foreground</strong><code>#3f8f8a</code></span></button>
+        <button class="swatch" style="--color:#a7c9c6;--label:#020c17" data-copy="#a7c9c6"><span class="swatch__top">Foreground Light <span class="swatch__copy">Copy</span></span><span><strong>light_foreground</strong><code>#a7c9c6</code></span></button>
+        <button class="swatch" style="--color:#faa968;--label:#020c17" data-copy="#faa968"><span class="swatch__top">Hyprland Active <span class="swatch__copy">Copy</span></span><span><strong>active_border</strong><code>#faa968</code></span></button>
+        <button class="swatch" style="--color:#595959;--label:#f6dcac" data-copy="#595959aa"><span class="swatch__top">Hyprland Inactive <span class="swatch__copy">Copy</span></span><span><strong>inactive_border</strong><code>#595959aa</code></span></button>
+      </div>
+    </section>
+
+    <section aria-labelledby="terminal-title">
+      <div class="section-head">
+        <h2 id="terminal-title">Terminal colors</h2>
+        <p>ANSI colors and their bright aliases from the stock theme.</p>
+      </div>
+      <div class="palette">
+        <button class="swatch" style="--color:#f85525;--label:#020c17" data-copy="#f85525"><span class="swatch__top">Red <span class="swatch__copy">Copy</span></span><span><strong>red / bright_red</strong><code>#f85525</code></span></button>
+        <button class="swatch" style="--color:#e97b3c;--label:#020c17" data-copy="#e97b3c"><span class="swatch__top">Yellow <span class="swatch__copy">Copy</span></span><span><strong>yellow / bright_yellow</strong><code>#e97b3c</code></span></button>
+        <button class="swatch" style="--color:#faa968;--label:#020c17" data-copy="#faa968"><span class="swatch__top">Orange <span class="swatch__copy">Copy</span></span><span><strong>orange / bright_blue</strong><code>#faa968</code></span></button>
+        <button class="swatch" style="--color:#028391;--label:#020c17" data-copy="#028391"><span class="swatch__top">Green <span class="swatch__copy">Copy</span></span><span><strong>green / bright_green</strong><code>#028391</code></span></button>
+        <button class="swatch" style="--color:#8cbfb8;--label:#020c17" data-copy="#8cbfb8"><span class="swatch__top">Cyan <span class="swatch__copy">Copy</span></span><span><strong>cyan / bright_cyan</strong><code>#8cbfb8</code></span></button>
+        <button class="swatch" style="--color:#3f8f8a;--label:#020c17" data-copy="#3f8f8a"><span class="swatch__top">Blue <span class="swatch__copy">Copy</span></span><span><strong>blue / bright_magenta</strong><code>#3f8f8a</code></span></button>
+        <button class="swatch" style="--color:#3f8f8a;--label:#020c17" data-copy="#3f8f8a"><span class="swatch__top">Magenta <span class="swatch__copy">Copy</span></span><span><strong>magenta</strong><code>#3f8f8a</code></span></button>
+        <button class="swatch" style="--color:#743d1e;--label:#f6dcac" data-copy="#743d1e"><span class="swatch__top">Brown <span class="swatch__copy">Copy</span></span><span><strong>brown</strong><code>#743d1e</code></span></button>
+      </div>
+    </section>
+
+    <section aria-labelledby="copy-title">
+      <div class="section-head">
+        <h2 id="copy-title">Copy the whole set</h2>
+        <p>Ready-made source formats for Omarchy and the web.</p>
+      </div>
+      <div class="code-grid">
+        <article class="code-card">
+          <div class="code-card__bar"><h3>colors.toml</h3><button class="copy-all" data-copy-target="toml">Copy all</button></div>
+<pre id="toml">mode = "dark"
+
+accent = "#faa968"
+selection = "#134e5a"
+muted = "#2a6b78"
+
+background = "#05182e"
+dark_background = "#031222"
+darker_background = "#020c17"
+lighter_background = "#0a2540"
+
+foreground = "#f6dcac"
+dark_foreground = "#3f8f8a"
+light_foreground = "#a7c9c6"
+bright_foreground = "#f6dcac"
+
+red = "#f85525"
+yellow = "#e97b3c"
+orange = "#faa968"
+green = "#028391"
+cyan = "#8cbfb8"
+blue = "#3f8f8a"
+magenta = "#3f8f8a"
+brown = "#743d1e"
+
+bright_red = "#f85525"
+bright_yellow = "#e97b3c"
+bright_green = "#028391"
+bright_cyan = "#8cbfb8"
+bright_blue = "#faa968"
+bright_magenta = "#3f8f8a"</pre>
+        </article>
+
+        <article class="code-card">
+          <div class="code-card__bar"><h3>CSS custom properties</h3><button class="copy-all" data-copy-target="css-vars">Copy all</button></div>
+<pre id="css-vars">:root {
+  --retro82-accent: #faa968;
+  --retro82-selection: #134e5a;
+  --retro82-muted: #2a6b78;
+  --retro82-background: #05182e;
+  --retro82-background-dark: #031222;
+  --retro82-background-darker: #020c17;
+  --retro82-background-lighter: #0a2540;
+  --retro82-foreground: #f6dcac;
+  --retro82-foreground-dark: #3f8f8a;
+  --retro82-foreground-light: #a7c9c6;
+  --retro82-red: #f85525;
+  --retro82-yellow: #e97b3c;
+  --retro82-orange: #faa968;
+  --retro82-green: #028391;
+  --retro82-cyan: #8cbfb8;
+  --retro82-blue: #3f8f8a;
+  --retro82-magenta: #3f8f8a;
+  --retro82-brown: #743d1e;
+  --retro82-active-border: #faa968;
+  --retro82-inactive-border: #595959aa;
+}</pre>
+        </article>
+      </div>
+    </section>
+
+    <div class="note"><strong>Source note:</strong> Palette values come directly from <code>/usr/share/omarchy/themes/retro-82/colors.toml</code>. Retro 82 sets the active Hyprland pane border to <code>#faa968</code> and inherits Omarchy's default inactive border value, <code>#595959aa</code>.</div>
+  </main>
+
+  <div class="toast" role="status" aria-live="polite" data-show="false">Copied</div>
+
+  <script>
+    const toast = document.querySelector('.toast');
+    let toastTimer;
+
+    async function copyText(text, label) {
+      try {
+        await navigator.clipboard.writeText(text);
+        toast.textContent = `Copied ${label}`;
+      } catch {
+        toast.textContent = `Copy failed — select ${label}`;
+      }
+      toast.dataset.show = 'true';
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.dataset.show = 'false', 1400);
+    }
+
+    document.querySelectorAll('.swatch[data-copy]').forEach((swatch) => {
+      swatch.addEventListener('click', () => copyText(swatch.dataset.copy, swatch.dataset.copy));
+    });
+
+    document.querySelectorAll('[data-copy-target]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = document.getElementById(button.dataset.copyTarget);
+        copyText(target.textContent, button.dataset.copyTarget);
+      });
+    });
+  </script>
+</body>
+</html>
