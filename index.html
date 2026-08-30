@@ -326,8 +326,8 @@
       opacity: 0;
     }
     .pre.pre--live pre {
-      will-change: color, filter, text-shadow;
-      animation: ascii-etch 1.7s steps(22) both, logo-pulse 3.8s linear 1.7s infinite;
+      will-change: color;
+      animation: ascii-etch 1.7s steps(22) both, logo-pulse 1s ease-in-out 1.7s infinite alternate;
     }
     .pre.pre--live a::after { animation: ascii-laser 1.7s steps(22) both; }
     .hero-grid {
@@ -638,53 +638,8 @@
       100% { left: 100%; opacity: 0; }
     }
     @keyframes logo-pulse {
-      0% {
-        color: var(--omarchy-green);
-        filter: brightness(1);
-        text-shadow: 0 0 0 rgba(158, 206, 106, 0);
-        animation-timing-function: cubic-bezier(.85, 0, .15, 1);
-      }
-      17% {
-        color: var(--omarchy-green);
-        filter: brightness(1.04);
-        text-shadow: 0 0 4px rgba(158, 206, 106, .15);
-        animation-timing-function: cubic-bezier(.05, .9, .18, 1.35);
-      }
-      31% {
-        color: var(--blue);
-        filter: brightness(1.18);
-        text-shadow: 0 0 18px rgba(63, 143, 138, .62);
-        animation-timing-function: cubic-bezier(.9, -.2, .08, 1.2);
-      }
-      38% {
-        color: var(--omarchy-green);
-        filter: brightness(.96);
-        text-shadow: -5px 0 10px rgba(63, 143, 138, .34);
-        animation-timing-function: cubic-bezier(.12, 1.45, .7, .9);
-      }
-      44% {
-        color: var(--blue);
-        filter: brightness(1.1);
-        text-shadow: 5px 0 12px rgba(158, 206, 106, .35);
-        animation-timing-function: cubic-bezier(.78, 0, .22, 1);
-      }
-      66% {
-        color: var(--blue);
-        filter: brightness(1);
-        text-shadow: 0 0 2px rgba(63, 143, 138, .1);
-        animation-timing-function: cubic-bezier(.04, .82, .12, 1.4);
-      }
-      87% {
-        color: var(--omarchy-green);
-        filter: brightness(1.16);
-        text-shadow: 0 0 16px rgba(158, 206, 106, .52);
-        animation-timing-function: cubic-bezier(.95, 0, .1, 1);
-      }
-      100% {
-        color: var(--omarchy-green);
-        filter: brightness(1);
-        text-shadow: 0 0 0 rgba(158, 206, 106, 0);
-      }
+      from { color: var(--omarchy-green); }
+      to { color: var(--blue); }
     }
 
     @media (min-width: 1101px) {
