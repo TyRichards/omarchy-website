@@ -9,12 +9,6 @@
   <link rel="icon" href="https://omarchy.org/assets/images/favicon.png">
   <style>
     @font-face {
-      font-family: "Departure Mono";
-      src: url("https://cdn.jsdelivr.net/gh/rektdeckard/departure-mono@main/public/assets/DepartureMono-Regular.woff2") format("woff2");
-      font-display: swap;
-      font-weight: 400;
-    }
-    @font-face {
       font-family: "JetBrains Mono";
       src: url("https://omarchy.org/assets/fonts/JetBrainsMono-Regular.woff2") format("woff2");
       font-display: swap;
@@ -39,7 +33,7 @@
       --line: 2px solid var(--stroke);
       --shadow: 8px 8px 0 var(--deep);
       --page: min(1280px, calc(100% - 128px));
-      --font: "Departure Mono", "IBM Plex Mono", "Courier New", monospace;
+      --font: "JetBrains Mono", monospace;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -477,7 +471,7 @@
       place-items: center;
       padding: 18px 12px;
       border-right: 2px solid var(--stroke);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: var(--font);
       font-size: clamp(12px, 1.2vw, 17px);
       font-weight: 800;
       letter-spacing: -.04em;
