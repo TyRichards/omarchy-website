@@ -449,8 +449,6 @@
     .btn:hover { transform: translate(5px, 5px); box-shadow: none; background: var(--lime); color: var(--deep); }
     .btn--primary { border-color: var(--omarchy-green); background: var(--omarchy-green); color: var(--paper); }
     .btn--primary:hover { border-color: var(--purple); background: var(--purple); color: var(--paper); }
-    .btn--cta { background: var(--deep); color: var(--white); }
-    .btn--cta:hover { background: var(--purple); color: var(--white); }
     .btn--secondary { border-color: var(--purple); background: transparent; color: var(--heading); }
     .btn--secondary:hover { border-color: var(--purple); background: var(--purple); color: var(--paper); }
     .btn--primary, .btn--secondary { box-shadow: 5px 5px 0 var(--purple); }
@@ -460,7 +458,7 @@
       position: relative;
       border: var(--line);
       background: var(--deep);
-      box-shadow: 10px 10px 0 var(--blue);
+      box-shadow: 10px 10px 0 var(--purple);
     }
     .video-facade {
       position: relative;
@@ -573,12 +571,12 @@
       border: 2px solid var(--stroke);
       background: var(--paper);
       text-decoration: none;
-      transition: transform .18s ease, box-shadow .18s ease;
+      box-shadow: 5px 5px 0 var(--purple);
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
     }
-    .video-card:hover { z-index: 2; transform: translate(-5px, -5px); box-shadow: 9px 9px 0 var(--lime); }
+    .video-card:hover { z-index: 2; transform: translate(5px, 5px); box-shadow: none; }
     .video-card .video-facade { border-bottom: var(--line); }
-    .video-card .video-facade img { filter: saturate(.72) contrast(.94); transition: transform .3s ease; }
-    .video-card:hover .video-facade img { transform: scale(1.035); }
+    .video-card .video-facade img { filter: saturate(.72) contrast(.94); }
     .video-card__body { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; padding: 28px; }
     .video-card h3 { margin: 0; font-size: clamp(17px, 2vw, 27px); font-weight: 400; line-height: 1.15; letter-spacing: -.035em; }
     .video-card p { margin: 0; font-size: 14px; text-align: right; text-transform: uppercase; }
@@ -726,7 +724,7 @@
       .hero h1 { font-size: clamp(28px, 8.4vw, 34.4px); }
       .actions { display: grid; grid-template-columns: 1fr; }
       .btn { width: 100%; }
-      .screen { box-shadow: 6px 6px 0 var(--blue); }
+      .screen { box-shadow: 6px 6px 0 var(--purple); }
       .logo-row { grid-template-columns: repeat(3, 1fr); }
       .logo-chip { min-height: 0; border-right: 2px solid var(--purple) !important; border-bottom: 2px solid var(--purple) !important; }
       .logo-chip:nth-child(3n) { border-right: 0 !important; }
@@ -962,7 +960,7 @@
     <section class="final-cta" aria-label="Install Omarchy">
       <div class="final-cta__inner">
         <div><h2>There are many operating systems<br>but this one is <em>yours</em></h2></div>
-        <a class="btn btn--cta" href="https://iso.omarchy.org/omarchy-4.0.1.iso"><span class="nerd-icon" aria-hidden="true"></span><span>Download ISO</span></a>
+        <a class="btn btn--secondary" href="https://iso.omarchy.org/omarchy-4.0.1.iso"><span class="nerd-icon" aria-hidden="true"></span><span>Download ISO</span></a>
       </div>
     </section>
   </main>
