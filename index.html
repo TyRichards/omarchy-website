@@ -437,6 +437,14 @@
       letter-spacing: -.055em;
       text-wrap: balance;
     }
+    .hero-gradient-line {
+      display: inline-block;
+      color: transparent;
+      background: linear-gradient(to right, #028391, #a7c9c6);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .hero-gradient-line .hero-cursor { color: #a7c9c6; }
     .hero-cursor {
       display: inline-block;
       margin-left: .12em;
@@ -466,10 +474,10 @@
     }
     .btn:hover { transform: translate(5px, 5px); box-shadow: none; background: var(--lime); color: var(--deep); }
     .btn--primary { border-color: var(--omarchy-green); background: var(--omarchy-green); color: var(--paper); }
-    .btn--primary:hover { border-color: var(--purple); background: var(--purple); color: var(--paper); }
-    .btn--secondary { border-color: var(--purple); background: transparent; color: var(--heading); }
-    .btn--secondary:hover { border-color: var(--purple); background: var(--purple); color: var(--paper); }
-    .btn--primary, .btn--secondary { box-shadow: 5px 5px 0 var(--purple); }
+    .btn--primary:hover { border-color: var(--green); background: var(--green); color: var(--paper); }
+    .btn--secondary { border-color: var(--green); background: transparent; color: var(--heading); }
+    .btn--secondary:hover { border-color: var(--green); background: var(--green); color: var(--paper); }
+    .btn--primary, .btn--secondary { box-shadow: 5px 5px 0 var(--green); }
     .hero-download { width: 100%; }
     .nerd-icon { font-family: "Symbols Nerd Font Mono"; font-size: 20px; font-style: normal; font-weight: 400; line-height: 1; }
     .screen {
@@ -876,7 +884,7 @@
           </a>
         </div>
 
-        <h1>There are many operating systems<br>but this one is <em>yours</em><span class="hero-cursor" aria-hidden="true">█</span></h1>
+        <h1>There are many operating systems<br><span class="hero-gradient-line">but this one is <em>yours</em><span class="hero-cursor" aria-hidden="true">█</span></span></h1>
         <p class="hero-intro">Omarchy is a malleable OS for the age of agents.<br> Omarchy adapts to you, not the other way around.</p>
         <div class="actions hero-actions">
           <a class="btn btn--primary hero-download" href="https://iso.omarchy.org/omarchy-4.0.1.iso"><span class="nerd-icon" aria-hidden="true"></span><span>Download ISO</span></a>
