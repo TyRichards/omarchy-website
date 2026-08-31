@@ -399,7 +399,7 @@
     }
     .hero h1 {
       max-width: 1100px;
-      margin: 0 auto 132px;
+      margin: 0 auto;
       text-align: center;
       font-size: clamp(30.4px, 2.944vw, 46.08px);
       font-weight: 400;
@@ -416,6 +416,7 @@
       animation: cursor-blink 800ms steps(1, end) infinite;
     }
     .actions { display: flex; flex-wrap: wrap; gap: 20px; }
+    .hero-actions { width: min(100%, 610px); margin: 30px auto 44px; }
     .btn {
       min-height: 58px;
       display: inline-flex;
@@ -843,14 +844,14 @@
         </div>
 
         <h1>There are many operating systems<br>but this one is <em>yours</em><span class="hero-cursor" aria-hidden="true">█</span></h1>
+        <div class="actions hero-actions">
+          <a class="btn btn--cta hero-download" href="https://iso.omarchy.org/omarchy-4.0.1.iso"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 19h16"/></svg><span>Download .ISO</span></a>
+        </div>
 
         <div class="hero-grid">
           <div class="hero-copy-wrap">
             <p class="kicker">Beautiful, Fun &amp; Opinionated Linux by DHH</p>
             <p class="hero-intro">Omarchy is a malleable OS for the age of agents. Omarchy adapts to you, not the other way around.</p>
-            <div class="actions">
-              <a class="btn btn--cta hero-download" href="https://iso.omarchy.org/omarchy-4.0.1.iso"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 19h16"/></svg><span>Download .ISO</span></a>
-            </div>
             <div class="terminal" role="group" aria-label="Download command">
               <span class="terminal__prompt" aria-hidden="true">❯</span>
               <code id="install-command">curl -LO https://iso.omarchy.org/omarchy-4.0.1.iso</code>
