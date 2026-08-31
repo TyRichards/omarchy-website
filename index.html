@@ -597,7 +597,7 @@
       border: 2px solid var(--purple);
       background: var(--paper);
       text-decoration: none;
-      box-shadow: 5px 5px 0 var(--purple);
+      box-shadow: 10px 10px 0 var(--purple);
       transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
     }
     .video-card:hover { z-index: 2; transform: translate(5px, 5px); box-shadow: none; }
@@ -777,7 +777,7 @@
       .hero-intro br { display: none; }
       .actions { display: grid; grid-template-columns: 1fr; }
       .btn { width: 100%; }
-      .screen { box-shadow: 6px 6px 0 var(--purple); }
+      .screen, .video-card { box-shadow: 6px 6px 0 var(--purple); }
       .logo-row { grid-template-columns: repeat(3, 1fr); }
       .logo-chip { min-height: 0; border-right: 2px solid var(--purple) !important; border-bottom: 2px solid var(--purple) !important; }
       .logo-chip:nth-child(3n) { border-right: 0 !important; }
