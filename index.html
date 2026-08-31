@@ -485,7 +485,9 @@
       border: 2px solid var(--purple);
       background: var(--deep);
       box-shadow: 10px 10px 0 var(--purple);
+      transition: transform .12s ease, box-shadow .12s ease;
     }
+    .screen:hover { transform: translate(5px, 5px); box-shadow: none; }
     .video-facade {
       position: relative;
       width: 100%;
