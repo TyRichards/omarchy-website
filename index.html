@@ -608,6 +608,7 @@
       background-repeat: repeat;
       background-size: 20px 20px;
     }
+    .community .section-head { position: relative; z-index: 2; }
     .community-grid {
       position: relative;
       isolation: isolate;
@@ -618,7 +619,7 @@
     .community-grid::before {
       content: "";
       position: absolute;
-      z-index: -1;
+      z-index: 0;
       top: 50%;
       left: 50%;
       width: 1800px;
@@ -635,6 +636,7 @@
     }
     .community-card {
       position: relative;
+      z-index: 1;
       min-height: 320px;
       display: flex;
       flex-direction: column;
