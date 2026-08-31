@@ -68,7 +68,6 @@
     body {
       min-height: 100vh;
       margin: 0;
-      border: 2px solid var(--purple);
       background-color: #031222;
       background-image:
         radial-gradient(circle, rgba(2, 131, 145, .2) 1px, transparent 1.25px),
@@ -81,6 +80,14 @@
       font-size: 16px;
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      border: 2px solid var(--purple);
+      pointer-events: none;
     }
     body::selection { color: var(--deep); background: var(--lime); }
     h1, h2 { color: var(--heading); }
