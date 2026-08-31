@@ -698,10 +698,11 @@
       .terminal code { font-size: 14px; }
       .copy-btn { padding-inline: 9px; }
       .screen { box-shadow: 6px 6px 0 var(--blue); }
-      .logo-row { grid-template-columns: repeat(2, 1fr); }
+      .logo-row { grid-template-columns: repeat(3, 1fr); }
       .logo-chip { min-height: 0; border-right: 2px solid var(--stroke) !important; border-bottom: 2px solid var(--stroke) !important; }
-      .logo-chip:nth-child(2n) { border-right: 0 !important; }
-      .logo-chip:last-child { grid-column: 1 / -1; border-bottom: 0 !important; }
+      .logo-chip:nth-child(3n) { border-right: 0 !important; }
+      .logo-chip:nth-last-child(-n+3) { border-bottom: 0 !important; }
+      .logo-chip:last-child { grid-column: auto; }
       .section { padding: 96px 0; }
       .section-head { display: block; }
       .section-head__meta { margin-top: 28px; }
