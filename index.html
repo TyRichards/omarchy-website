@@ -290,34 +290,32 @@
       top: calc(100% + 10px);
       left: 0;
       min-width: 240px;
-      padding: 12px;
-      border: 2px solid var(--nav-stroke);
-      background: var(--panel);
-      box-shadow: var(--shadow);
+      padding: 0;
+      border: 0;
+      outline-style: solid;
+      outline-color: var(--nav-stroke);
+      background-color: rgba(3, 18, 34, .5);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      box-shadow: none;
     }
-    .nav-menu::before {
-      content: "";
-      position: absolute;
-      top: -12px;
-      left: 20px;
-      width: 18px;
-      height: 12px;
-      border-right: 2px solid var(--nav-stroke);
-      background: var(--yellow);
-    }
+    .nav-menu::before { display: none; }
     .nav-menu a {
       display: flex;
       justify-content: space-between;
       gap: 28px;
-      padding: 14px;
+      min-height: 53px;
+      align-items: center;
+      padding: 14px 18px;
       border-bottom: 2px solid var(--nav-stroke);
+      background: transparent;
       font-size: 14px;
       text-decoration: none;
       text-transform: uppercase;
     }
     .nav-menu a:last-child { border-bottom: 0; }
     .nav-menu a::after { content: "↗"; }
-    .nav-menu a:hover { background: var(--panel); color: var(--heading); }
+    .nav-menu a:hover { background: rgba(255, 255, 255, .05); color: var(--heading); }
     .nav-link--install {
       border: 0 !important;
       border-left: 2px solid var(--nav-stroke) !important;
@@ -741,13 +739,17 @@
         display: none;
         align-items: stretch;
         padding: 0;
-        border-bottom: 2px solid var(--nav-stroke);
-        background: var(--paper);
+        border: 0;
+        outline-style: solid;
+        outline-color: var(--nav-stroke);
+        background-color: rgba(3, 18, 34, .5);
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
       }
       .nav-links[data-open="true"] { display: grid; grid-template-columns: repeat(2, 1fr); }
-      .nav-links > a, .nav-group > summary { width: 100%; min-height: 48px; justify-content: space-between; margin-left: 0; border: 2px solid var(--nav-stroke); background: var(--panel); }
+      .nav-links > a, .nav-group > summary { width: 100%; min-height: 53px; justify-content: space-between; margin-left: 0; border: 2px solid var(--nav-stroke); background: transparent; }
       .nav-group { position: static; display: block; }
-      .nav-menu { position: static; min-width: 0; margin-top: 4px; box-shadow: 3px 3px 0 var(--deep); }
+      .nav-menu { position: static; min-width: 0; margin-top: 0; box-shadow: none; }
       .nav-menu::before { display: none; }
       .nav-links > .nav-link--install {
         grid-column: 1 / -1;
