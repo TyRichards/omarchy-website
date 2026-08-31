@@ -317,17 +317,6 @@
       transition: color .15s ease;
     }
     .pre.hero-logo a:hover { color: var(--lime); }
-    .logo-face { position: relative; z-index: 2; }
-    .logo-offset {
-      position: absolute;
-      z-index: 1;
-      inset: 0 auto auto 0;
-      color: var(--deep) !important;
-      pointer-events: none;
-      user-select: none;
-    }
-    .logo-offset--right { transform: translate(.46em, .16em); }
-    .logo-offset--below { transform: translate(.16em, .46em); }
     .pre.hero-logo a::after {
       content: "";
       position: absolute;
@@ -339,7 +328,7 @@
       box-shadow: 0 0 16px 4px rgba(140, 191, 184, .5);
       opacity: 0;
     }
-    .pre.pre--live .logo-face {
+    .pre.pre--live pre {
       will-change: color;
       animation: ascii-etch 1.7s steps(22) both, logo-pulse 1s ease-in-out 1.7s infinite alternate;
     }
@@ -791,7 +780,7 @@
       <div class="hero__inner">
         <div class="pre pre--live hero-logo">
           <a href="#top" aria-label="Omarchy">
-<pre class="logo-face">                 ▄▄▄
+<pre>                 ▄▄▄
  ▄█████▄    ▄███████████▄    ▄███████   ▄███████   ▄███████   ▄█   █▄    ▄█   █▄
 ███   ███  ███   ███   ███  ███   ███  ███   ███  ███   ███  ███   ███  ███   ███
 ███   ███  ███   ███   ███  ███   ███  ███   ███  ███   █▀   ███   ███  ███   ███
@@ -957,17 +946,6 @@
   </footer>
 
   <script>
-    const logoFace = document.querySelector('.hero-logo .logo-face');
-    if (logoFace) {
-      const rightOffset = logoFace.cloneNode(true);
-      rightOffset.className = 'logo-offset logo-offset--right';
-      rightOffset.setAttribute('aria-hidden', 'true');
-      const belowOffset = logoFace.cloneNode(true);
-      belowOffset.className = 'logo-offset logo-offset--below';
-      belowOffset.setAttribute('aria-hidden', 'true');
-      logoFace.before(rightOffset, belowOffset);
-    }
-
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
 
