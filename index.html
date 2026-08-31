@@ -33,6 +33,7 @@
     :root {
       /* Omarchy Retro 82 */
       --ink: #a7c9c6;
+      --heading: #f6dcac;
       --paper: #05182e;
       --white: #a7c9c6;
       --panel: #0a2540;
@@ -71,6 +72,7 @@
       -webkit-font-smoothing: antialiased;
     }
     body::selection { color: var(--deep); background: var(--lime); }
+    h1, h2 { color: var(--heading); }
     img { display: block; max-width: 100%; }
     a { color: inherit; }
     button, input { font: inherit; }
@@ -155,6 +157,7 @@
       align-items: center;
       gap: 20px;
       flex: 0 0 auto;
+      color: var(--heading);
       font-size: 14px;
       text-decoration: none;
       letter-spacing: .08em;
@@ -174,7 +177,7 @@
     .brand__o {
       width: 27px;
       height: 27px;
-      color: var(--omarchy-green);
+      color: var(--heading);
       -webkit-mask-image: url("https://omarchy.org/brand/omarchy-logo.svg");
       mask-image: url("https://omarchy.org/brand/omarchy-logo.svg");
     }
