@@ -1,0 +1,99 @@
+<!--
+  Archived from the v2 homepage for reuse on a future Install page.
+  Expects the site's Retro 82 CSS variables and JetBrains Mono font.
+-->
+<style>
+  .terminal {
+    max-width: 610px;
+    display: flex;
+    align-items: stretch;
+    margin-top: 34px;
+    border: 2px solid var(--purple, #2a6b78);
+    background: transparent;
+    color: var(--white, #a7c9c6);
+  }
+
+  .terminal__prompt {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    border-right: 2px solid var(--purple, #2a6b78);
+    color: var(--lime, #8cbfb8);
+  }
+
+  .terminal code {
+    width: 0;
+    min-width: 0;
+    flex: 1 1 auto;
+    padding: 17px;
+    overflow: hidden;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .copy-btn {
+    flex: 0 0 auto;
+    margin-left: auto;
+    padding: 12px 16px;
+    border: 0;
+    border-left: 2px solid var(--purple, #2a6b78);
+    background: transparent;
+    color: var(--white, #a7c9c6);
+    cursor: pointer;
+  }
+
+  .copy-btn svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+  }
+
+  .copy-btn:hover { background: var(--lime, #8cbfb8); color: var(--deep, #020c17); }
+  .copy-btn[data-copied="true"] { color: var(--omarchy-green, #9ece6a); }
+</style>
+
+<div class="terminal" role="group" aria-label="Download command">
+  <span class="terminal__prompt" aria-hidden="true">❯</span>
+  <code id="install-command">curl -LO https://iso.omarchy.org/omarchy-4.0.1.iso</code>
+  <button class="copy-btn" type="button" data-copy="install-command" aria-label="Copy command" title="Copy command">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="9" y="9" width="13" height="13" rx="2"/>
+      <path d="M15 9V5a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3h4"/>
+    </svg>
+  </button>
+</div>
+
+<script>
+  document.querySelectorAll('[data-copy]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const target = document.getElementById(button.dataset.copy);
+      try {
+        await navigator.clipboard.writeText(target.textContent);
+        button.dataset.copied = 'true';
+        button.setAttribute('aria-label', 'Copied');
+        button.title = 'Copied';
+        window.setTimeout(() => {
+          button.dataset.copied = 'false';
+          button.setAttribute('aria-label', 'Copy command');
+          button.title = 'Copy command';
+        }, 1600);
+      } catch {
+        button.setAttribute('aria-label', 'Command selected; press Control C to copy');
+        const range = document.createRange();
+        range.selectNodeContents(target);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+    });
+  });
+</script>
