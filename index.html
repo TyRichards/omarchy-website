@@ -83,7 +83,8 @@
       -webkit-font-smoothing: antialiased;
     }
     body::selection { color: var(--deep); background: var(--lime); }
-    h1, h2 { color: var(--heading); font-weight: 700; }
+    h1, h2 { color: var(--heading); }
+    h1, h2, h3, h4, h5, h6 { font-weight: 400; }
     h1 { line-height: 1.2; }
     img { display: block; max-width: 100%; }
     a { color: inherit; }
@@ -423,8 +424,8 @@
       max-width: 1100px;
       margin: 0 auto;
       text-align: center;
-      font-size: clamp(30.4px, 2.944vw, 46.08px);
-      font-weight: 700;
+      font-size: clamp(30.4px, 3.5vw, 46.08px);
+      font-weight: 400;
       line-height: 1.2;
       letter-spacing: -.055em;
       text-wrap: balance;
@@ -561,7 +562,7 @@
       max-width: 800px;
       margin: 0;
       font-size: clamp(38px, 5.5vw, 82px);
-      font-weight: 700;
+      font-weight: 400;
       line-height: .95;
       letter-spacing: -.055em;
       text-wrap: balance;
@@ -648,7 +649,7 @@
       gap: 48px;
       margin: auto;
     }
-    .final-cta h2 { margin: 0 0 8px; font-size: clamp(24.3px, 4.05vw, 55.08px); font-weight: 700; line-height: 1; letter-spacing: -.055em; }
+    .final-cta h2 { margin: 0 0 8px; font-size: clamp(24.3px, 4.05vw, 55.08px); font-weight: 400; line-height: 1; letter-spacing: -.055em; }
     .final-cta p { margin: 0; font-size: 14px; text-transform: uppercase; }
     .final-cta .btn { min-width: 220px; }
 
@@ -675,10 +676,6 @@
     @keyframes logo-pulse {
       from { color: var(--omarchy-green); }
       to { color: var(--blue); }
-    }
-
-    @media (min-width: 1101px) {
-      .hero h1 { font-size: 2.5vw; }
     }
 
     @media (max-width: 1100px) {
@@ -732,7 +729,6 @@
       .hero-grid { margin-bottom: 0; }
       .pre.hero-logo { margin-bottom: 18px; padding-block: 3px; overflow: hidden; }
       .pre.hero-logo pre { font-size: 1.98vw; }
-      .hero h1 { font-size: clamp(28px, 8.4vw, 34.4px); }
       .actions { display: grid; grid-template-columns: 1fr; }
       .btn { width: 100%; }
       .screen { box-shadow: 6px 6px 0 var(--purple); }
