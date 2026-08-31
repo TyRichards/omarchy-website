@@ -660,9 +660,9 @@
       background: var(--paper);
       box-shadow: 10px 10px 0 var(--purple);
       text-decoration: none;
-      transition: transform .16s ease, box-shadow .16s ease;
+      transition: transform .1s ease-out, box-shadow .1s ease-out, background-color .1s ease-out, border-color .1s ease-out;
     }
-    .community-card:hover { transform: translate(6px, 6px); box-shadow: none; }
+    .community-card:hover { transform: translate(6px, 6px); border-color: var(--orange); background: var(--panel); box-shadow: none; }
     .community-card__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
     .community-card__number { font-size: 14px; }
     .community-card h3 { margin: 60px 0 16px; display: flex; align-items: center; gap: 12px; font-size: clamp(28px, 3vw, 46px); font-weight: 400; line-height: 1; letter-spacing: -.05em; }
