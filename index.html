@@ -670,8 +670,13 @@
     .final-cta {
       padding: 112px 0;
       border-top: var(--line);
-      background-color: var(--purple);
-      background-image: radial-gradient(ellipse 900px 600px at 50% 50%, #a7c9c6 0%, #2a6b78 100%);
+      background-color: #031222;
+      background-image:
+        radial-gradient(circle, rgba(2, 131, 145, .2) 1px, transparent 1.25px),
+        radial-gradient(ellipse 900px 600px at 50% 0%, #2a6b78 0%, #031222 100%);
+      background-position: 0 0, top center;
+      background-repeat: repeat, no-repeat;
+      background-size: 20px 20px, 100% 600px;
       color: var(--deep);
     }
     .final-cta__inner {
