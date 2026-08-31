@@ -29,6 +29,14 @@
       font-style: italic;
       font-weight: 400;
     }
+    @font-face {
+      font-family: "Symbols Nerd Font Mono";
+      src: url("https://cdn.jsdelivr.net/gh/ryanoasis/nerd-fonts@v3.4.0/patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFontMono-Regular.ttf") format("truetype");
+      font-display: swap;
+      font-style: normal;
+      font-weight: 400;
+      unicode-range: U+F405;
+    }
 
     :root {
       /* Omarchy Retro 82 */
@@ -434,13 +442,15 @@
       cursor: pointer;
     }
     .btn:hover { transform: translate(5px, 5px); box-shadow: none; background: var(--lime); color: var(--deep); }
+    .btn--primary { border-color: var(--omarchy-green); background: var(--omarchy-green); color: var(--paper); }
+    .btn--primary:hover { border-color: var(--green); background: var(--green); color: var(--paper); }
     .btn--cta { background: var(--deep); color: var(--white); }
     .btn--cta:hover { background: var(--purple); color: var(--white); }
-    .btn--secondary { background: transparent; color: var(--heading); }
-    .btn--secondary:hover { background: var(--panel); color: var(--heading); }
-    .hero-download { width: 100%; background: var(--omarchy-green); color: var(--paper); }
-    .hero-download:hover { background: var(--green); color: var(--paper); }
+    .btn--secondary { border-color: var(--green); background: transparent; color: var(--heading); }
+    .btn--secondary:hover { border-color: var(--green); background: var(--panel); color: var(--heading); }
+    .hero-download { width: 100%; }
     .hero-actions .btn svg { width: 20px; height: 20px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-linecap: square; stroke-linejoin: miter; stroke-width: 2; }
+    .nerd-icon { font-family: "Symbols Nerd Font Mono"; font-size: 20px; font-style: normal; font-weight: 400; line-height: 1; }
     .screen {
       position: relative;
       border: var(--line);
@@ -813,8 +823,8 @@
 
         <h1>There are many operating systems<br>but this one is <em>yours</em><span class="hero-cursor" aria-hidden="true">█</span></h1>
         <div class="actions hero-actions">
-          <a class="btn btn--cta hero-download" href="https://iso.omarchy.org/omarchy-4.0.1.iso"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 19h16"/></svg><span>Download .ISO</span></a>
-          <a class="btn btn--secondary" href="https://omarchy.org/manual/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11a3 3 0 0 1 3 3v15a3 3 0 0 0-3-3H4V5.5Zm16 0A2.5 2.5 0 0 0 17.5 3H14v18a3 3 0 0 1 3-3h3V5.5Z"/></svg><span>Manual</span></a>
+          <a class="btn btn--primary hero-download" href="https://iso.omarchy.org/omarchy-4.0.1.iso"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 19h16"/></svg><span>Download .ISO</span></a>
+          <a class="btn btn--secondary" href="https://omarchy.org/manual/"><span class="nerd-icon" aria-hidden="true"></span><span>Manual</span></a>
         </div>
 
         <div class="hero-grid">
