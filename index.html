@@ -58,10 +58,12 @@
     body {
       margin: 0;
       background-color: #05182e;
-      background-image: radial-gradient(ellipse 900px 600px at 50% 0%, #2a6b78 0%, #05182e 100%);
-      background-position: top center;
-      background-repeat: no-repeat;
-      background-size: 100% 600px;
+      background-image:
+        radial-gradient(circle, #2a6b78 1px, transparent 1.25px),
+        radial-gradient(ellipse 900px 600px at 50% 0%, #2a6b78 0%, #05182e 100%);
+      background-position: 0 0, top center;
+      background-repeat: repeat, no-repeat;
+      background-size: 20px 20px, 100% 600px;
       color: var(--ink);
       font-family: var(--font);
       font-size: 16px;
