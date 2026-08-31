@@ -129,14 +129,15 @@
       z-index: 50;
       border-bottom: var(--line);
       background-color: rgba(5, 24, 46, .85);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
     }
     .site-nav__inner {
-      width: 100%;
+      width: calc(100% - 60px);
       height: 43px;
       min-height: 43px;
-      margin: 0;
-      padding-left: 15px;
-      padding-right: 0;
+      margin: 0 30px;
+      padding: 0;
       display: flex;
       align-items: center;
       gap: 32px;
